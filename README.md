@@ -1,4 +1,4 @@
 vimrc
 =====
 
-.vimrc and vim folder
+.vimrc file and vim folder
