@@ -1,4 +1,7 @@
 "wtfil vimrc settings
+  call pathogen#infect()
+    autocmd BufNewFile,BufRead *.json set ft=javascript
+	au BufNewFile,BufRead *.less set filetype=less
 	let g:solarized_termcolors=256
 	set t_Co=256 "colors
 	syntax enable
@@ -16,7 +19,10 @@
 	imap <C-e> {}<ESC>i<CR><ESC>k$o<tab>
 	imap <C-v> <End>
 	imap <C-b> <Esc><S-i>
-"bind russian keyboard
+	imap <C-r> <%=  %><Esc>hhi
+	"imap <C-r> {{ i18n('
+	"imap <C-f> ') }}
+    "bind russian keyboard
 	map ё `
 	map й q
 	map ц w
@@ -147,7 +153,8 @@
 	set autoindent          " Копирует отступ от предыдущей строки
 	set shiftwidth=2        " Размер сдвига при нажатии на клавиши << и >>
 	set tabstop=2           " Размер табуляции
-	set softtabstop=2
+	set expandtab
+	"set softtabstop=2
 	set linespace=1         " add some line space for easy reading
 	set cursorline          " Подсветка строки, в которой находится в данный момент курсор
 	set cursorcolumn
@@ -164,7 +171,7 @@
 	" Символ табуляции и конца строки
 			if has('multi_byte')
 					if version >= 700
-							set listchars=tab:▸\ ,trail:·,extends:→,precedes:←,nbsp:×
+							set listchars=tab:·\ ,trail:·,extends:→,precedes:←,nbsp:×
 					else
 							set listchars=tab:»\ ,trail:·,extends:>,precedes:<,nbsp:_
 					endif
