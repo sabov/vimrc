@@ -2,9 +2,11 @@
   call pathogen#infect()
     autocmd BufNewFile,BufRead *.json set ft=javascript
 	au BufNewFile,BufRead *.less set filetype=less
+  au BufNewFile,BufRead *.ejs set filetype=html
 	let g:solarized_termcolors=256
 	set t_Co=256 "colors
-	syntax enable
+	syntax on
+  filetype plugin indent on
 	set background=dark
 	colorscheme solarized
 	set nocp
